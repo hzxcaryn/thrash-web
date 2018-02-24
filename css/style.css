@@ -1,7 +1,7 @@
 ﻿/* Navbar ====================================== */
 @import url(materialize.css);
 .navbar {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Raleway';
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -ms-border-radius: 0;
@@ -1834,7 +1834,7 @@
   margin-bottom: 15px; }
   .block-header h2 {
     margin: 0 !important;
-    color: #666 !important;
+    color: #D1CFDB !important;
     font-weight: normal;
     font-size: 16px; }
     .block-header h2 small {
@@ -2363,12 +2363,12 @@
 
 /* General ===================================== */
 body {
-  background-color: #e9e9e9;
+  background-color: #373A6B;
   -moz-transition: all 0.5s;
   -o-transition: all 0.5s;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
-  font-family: 'Roboto', Arial, Tahoma, sans-serif; }
+  font-family: 'Raleway', Arial, Tahoma, sans-serif; }
 
 h1,
 h2,
@@ -2402,7 +2402,7 @@ a {
   animation: none !important; }
 
 section.content {
-  margin: 100px 15px 0 315px;
+  margin: 40px 15px 0 315px;
   -moz-transition: 0.5s;
   -o-transition: 0.5s;
   -webkit-transition: 0.5s;
@@ -2823,7 +2823,7 @@ section.content {
 
 /* Card ======================================== */
 .card {
-  background: #fff;
+  background: #404373;
   min-height: 50px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   position: relative;
@@ -2952,7 +2952,7 @@ section.content {
       background-color: #fff;
       color: #555; }
   .card .header {
-    color: #555;
+    color: #d1cfdc;
     padding: 20px;
     position: relative;
     border-bottom: 1px solid rgba(204, 204, 204, 0.35); }
@@ -2978,7 +2978,7 @@ section.content {
       margin: 0;
       font-size: 18px;
       font-weight: normal;
-      color: #111; }
+      color: #d1cfdc; }
       .card .header h2 small {
         display: block;
         font-size: 12px;
@@ -2992,7 +2992,7 @@ section.content {
       margin-top: 5px; }
   .card .body {
     font-size: 14px;
-    color: #555;
+    color: #b5b3c1;
     padding: 20px; }
     .card .body .col-xs-1,
     .card .body .col-sm-1,
@@ -6639,7 +6639,7 @@ fieldset[disabled] .form-control {
 
 /* Navbars ===================================== */
 .navbar {
-  font-family: "Roboto", sans-serif;
+  font-family: "Raleway", sans-serif;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -ms-border-radius: 0;
@@ -7473,14 +7473,14 @@ fieldset[disabled] .form-control {
   -o-transition: all 0.5s;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
-  font-family: "Roboto", sans-serif;
-  background: #fdfdfd;
+  font-family: "Kohinoor Bangla", sans-serif;
+  background: #272B5B;
   width: 300px;
   overflow: hidden;
   display: inline-block;
-  height: calc(100vh - 70px);
+  height: 100%;
   position: fixed;
-  top: 70px;
+  top: 0px;
   left: 0;
   -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
@@ -7513,15 +7513,13 @@ fieldset[disabled] .form-control {
       margin-top: 5px;
       font-size: 13px; }
   .sidebar .user-info {
-    padding: 13px 15px 12px 15px;
+    padding: 50px 15px 12px 15px;
     white-space: nowrap;
     position: relative;
-    border-bottom: 1px solid #e9e9e9;
-    background: url("../images/user-img-background.jpg") no-repeat no-repeat;
-    height: 135px; }
+    border-bottom: 1px solid #232453;
+    height: 220px; }
     .sidebar .user-info .image {
-      margin-right: 12px;
-      display: inline-block; }
+      text-align: center; }
       .sidebar .user-info .image img {
         -webkit-border-radius: 50%;
         -moz-border-radius: 50%;
@@ -7530,9 +7528,9 @@ fieldset[disabled] .form-control {
         vertical-align: bottom !important; }
     .sidebar .user-info .info-container {
       cursor: default;
-      display: block;
+      text-align: center;
       position: relative;
-      top: 25px; }
+      top: 15px; }
       .sidebar .user-info .info-container .name {
         white-space: nowrap;
         -ms-text-overflow: ellipsis;
@@ -7540,8 +7538,8 @@ fieldset[disabled] .form-control {
         text-overflow: ellipsis;
         overflow: hidden;
         font-size: 14px;
-        max-width: 200px;
-        color: #fff; }
+        max-width: 100%;
+        color: #D1CFDB; }
       .sidebar .user-info .info-container .email {
         white-space: nowrap;
         -ms-text-overflow: ellipsis;
@@ -7549,18 +7547,8 @@ fieldset[disabled] .form-control {
         text-overflow: ellipsis;
         overflow: hidden;
         font-size: 12px;
-        max-width: 200px;
-        color: #fff; }
-      .sidebar .user-info .info-container .user-helper-dropdown {
-        position: absolute;
-        right: -3px;
-        bottom: -12px;
-        -webkit-box-shadow: none;
-        -moz-box-shadow: none;
-        -ms-box-shadow: none;
-        box-shadow: none;
-        cursor: pointer;
-        color: #fff; }
+        max-width: 100%;
+        color: #D1CFDB; }
   .sidebar .menu {
     position: relative;
     overflow-y: auto;
@@ -7569,7 +7557,7 @@ fieldset[disabled] .form-control {
       list-style: none;
       padding-left: 0; }
       .sidebar .menu .list li.active > :first-child span {
-        font-weight: bold; }
+        font-weight: normal; }
       .sidebar .menu .list .header {
         background: #eee;
         font-size: 12px;
@@ -7618,7 +7606,7 @@ fieldset[disabled] .form-control {
         -webkit-transform: scale(1);
         transform: scale(1); }
       .sidebar .menu .list a {
-        color: #747474;
+        color: #9c9fce;
         position: relative;
         display: inline-flex;
         vertical-align: middle;
@@ -7632,8 +7620,8 @@ fieldset[disabled] .form-control {
           right: 15px; }
         .sidebar .menu .list a span {
           margin: 7px 0 7px 12px;
-          color: #333;
-          font-weight: bold;
+          color: #9c9fce;
+          font-weight: normal;
           font-size: 14px;
           overflow: hidden; }
       .sidebar .menu .list .ml-menu {
@@ -7669,7 +7657,7 @@ fieldset[disabled] .form-control {
   height: calc(100vh - 70px);
   position: fixed;
   right: -300px;
-  top: 70px;
+  top: 0px;
   background: #fdfdfd;
   z-index: 11 !important;
   -webkit-box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.1);

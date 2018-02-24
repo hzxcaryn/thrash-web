@@ -30,10 +30,10 @@
 .theme-indigo .sidebar .menu .list li.active {
   background-color: transparent; }
   .theme-indigo .sidebar .menu .list li.active > :first-child i, .theme-indigo .sidebar .menu .list li.active > :first-child span {
-    color: #3F51B5; }
+    color: #D1CFDB; }
 
 .theme-indigo .sidebar .menu .list .toggled {
-  background-color: transparent; }
+  background-color: #232453; }
 
 .theme-indigo .sidebar .menu .list .ml-menu {
   background-color: transparent; }

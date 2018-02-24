@@ -442,6 +442,89 @@ $.AdminBSB.browser = {
         }
     }
 }
+
+/*var ctx = document.getElementById("generalChart");
+var options = { 
+    "responsive": true,
+    "maintainAspectRatio": false
+}
+var generalChart = new Chart(ctx, {
+    width:300,
+    height:300,
+    type: 'line',
+    data: {
+        labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+        datasets: [{
+            label: 'Weight of Waste / g',
+            data: [12, 19, 3, 5, 2, 3, 10],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+*/
+$(function () {
+    new Chart(document.getElementById("generalChart").getContext("2d"), getChartJs('line'));
+
+});
+function getChartJs(type) {
+    var config = null;
+
+    if (type === 'line') {
+        config = {
+            type: 'line',
+            data: {
+                labels: ["January", "February", "March", "April", "May", "June", "July"],
+                datasets: [{
+                    label: "My First dataset",
+                    data: [65, 59, 80, 81, 56, 55, 40],
+                    borderColor: 'rgba(0, 188, 212, 0.75)',
+                    backgroundColor: 'rgba(0, 188, 212, 0.3)',
+                    pointBorderColor: 'rgba(0, 188, 212, 0)',
+                    pointBackgroundColor: 'rgba(0, 188, 212, 0.9)',
+                    pointBorderWidth: 1
+                }, {
+                        label: "My Second dataset",
+                        data: [28, 48, 40, 19, 86, 27, 90],
+                        borderColor: 'rgba(233, 30, 99, 0.75)',
+                        backgroundColor: 'rgba(233, 30, 99, 0.3)',
+                        pointBorderColor: 'rgba(233, 30, 99, 0)',
+                        pointBackgroundColor: 'rgba(233, 30, 99, 0.9)',
+                        pointBorderWidth: 1
+                    }]
+            },
+            options: {
+                responsive: true,
+                legend: false
+            }
+        }
+    }
+    return config;
+}
 //==========================================================================================================================
 
 $(function () {
