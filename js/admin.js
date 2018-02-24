@@ -487,10 +487,12 @@ var generalChart = new Chart(ctx, {
     }
 });
 */
+
+Chart.defaults.global.defaultFontColor = '#9c9fce';
 $(function () {
     new Chart(document.getElementById("generalChart").getContext("2d"), getChartJs('line'));
-
 });
+
 function getChartJs(type) {
     var config = null;
 

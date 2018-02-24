@@ -2822,16 +2822,20 @@ section.content {
     padding: 5px 0 0 8px !important; }
 
 /* Card ======================================== */
+.main-card {
+  max-width: 630px;
+}
+
 .card {
   background: #404373;
   min-height: 50px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   position: relative;
   margin-bottom: 30px;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  -ms-border-radius: 2px;
-  border-radius: 2px; }
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  border-radius: 8px; }
   .card .card-inside-title {
     margin-top: 25px;
     margin-bottom: 15px;
@@ -2952,7 +2956,7 @@ section.content {
       background-color: #fff;
       color: #555; }
   .card .header {
-    color: #d1cfdc;
+    color: #9c9fce;
     padding: 20px;
     position: relative;
     border-bottom: 1px solid rgba(204, 204, 204, 0.35); }
@@ -2992,7 +2996,7 @@ section.content {
       margin-top: 5px; }
   .card .body {
     font-size: 14px;
-    color: #b5b3c1;
+    color: #9c9fce;
     padding: 20px; }
     .card .body .col-xs-1,
     .card .body .col-sm-1,
@@ -3054,6 +3058,10 @@ section.content {
     .card .body .col-md-12,
     .card .body .col-lg-12 {
       margin-bottom: 20px; }
+  .waste-table {
+      max-width: calc(100% - 630px - 30px);
+      float: right;
+    }
 
 /* Infobox ===================================== */
 .info-box {
