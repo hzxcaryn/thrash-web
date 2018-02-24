@@ -2822,9 +2822,6 @@ section.content {
     padding: 5px 0 0 8px !important; }
 
 /* Card ======================================== */
-.main-card {
-  max-width: 630px;
-}
 
 .card {
   background: #404373;
@@ -6268,14 +6265,14 @@ fieldset[disabled] .form-control {
   right: 0;
   width: 100%;
   height: 100%;
-  background: #eee;
+  background: #272B5B;
   overflow: hidden;
   text-align: center; }
   .page-loader-wrapper p {
     font-size: 13px;
     margin-top: 10px;
     font-weight: bold;
-    color: #444; }
+    color: #D1CFDB; }
   .page-loader-wrapper .loader {
     position: relative;
     top: calc(50% - 30px); }
@@ -6389,7 +6386,7 @@ fieldset[disabled] .form-control {
   .spinner-layer.pl-deep-purple {
     border-color: #673AB7; }
   .spinner-layer.pl-indigo {
-    border-color: #3F51B5; }
+    border-color: #9087D2; }
   .spinner-layer.pl-blue {
     border-color: #2196F3; }
   .spinner-layer.pl-light-blue {
