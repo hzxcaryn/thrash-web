@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:themed="http://www.w3.org/1999/xhtml">
 
 <head>
     <meta charset="UTF-8">
@@ -31,9 +31,111 @@
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="../css/themes/theme-indigo.css" rel="stylesheet" />
+
+    <script>
+        var familyArray = [];
+        var selectedIndex = -1;
+
+        function init() {
+            document.getElementById("tablerows").innerHTML = "";
+            if (localStorage.familyRecord) {
+                familyArray = JSON.parse(localStorage.familyRecord);
+                for (var i = 0; i < familyArray.length; i++) {
+                   prepareTableCell(i, familyArray[i].name, familyArray[i].age, familyArray[i].weight, familyArray[i].height, familyArray[i].gender, familyArray[i].calories);
+                }
+            }
+        }
+
+        function onRegisterPressed() {
+            var name = document.getElementById("name").value;
+            var age = document.getElementById("age").value;
+            var weight = document.getElementById("weight").value;
+            var height = document.getElementById("height").value;
+            var gender = document.getElementById("gender").value;
+            var calories = calculateCalories(age, weight, height, gender);
+
+            var familyObj = {name: name, age: age, weight: weight, height: height, gender: gender, calories: calories};
+
+            if(selectedIndex === -1) {
+                familyArray.push(familyObj);
+            } else {
+                familyArray.splice(selectedIndex, 1, familyObj);
+            }
+
+
+            localStorage.familyRecord = JSON.stringify(familyArray);
+
+            init();
+
+            onClearPressed();
+
+        }
+
+        function prepareTableCell(index, name, age, weight, height, gender, calories) {
+            var table = document.getElementById("tablerows");
+            var row = table.insertRow();
+            var nameCell = row.insertCell(0);
+            var ageCell = row.insertCell(1);
+            var weightCell = row.insertCell(2);
+            var heightCell = row.insertCell(3);
+            var genderCell = row.insertCell(4);
+            var caloriesCell = row.insertCell(5);
+            var actionCell = row.insertCell(6);
+
+            nameCell.innerHTML = name;
+            ageCell.innerHTML = age;
+            weightCell.innerHTML = weight;
+            heightCell.innerHTML = height;
+            genderCell.innerHTML = gender;
+            caloriesCell.innerHTML = calories;
+            actionCell.innerHTML = '<button onclick="onEditPressed(' + index + ')" style="color:#000000">Edit</button><button onclick="deleteTableRow(' + index + ')" style="color:#000000">Delete</button>';
+        }
+
+        function deleteTableRow(index) {
+                familyArray.splice(index, 1);
+                localStorage.familyRecord = JSON.stringify(familyArray);
+                init();
+            }
+
+        function onClearPressed() {
+            selectedIndex = -1;
+            document.getElementById("name").value = "";
+            document.getElementById("age").value = "";
+            document.getElementById("weight").value = "";
+            document.getElementById("height").value = "";
+            document.getElementById("gender").value = "";
+            document.getElementById("submit").innerHTML = "Register";
+        }
+
+        function onEditPressed(index) {
+            selectedIndex = index;
+            var familyObj = familyArray[index];
+            document.getElementById("name").value = familyObj.name;
+            document.getElementById("age").value = familyObj.age;
+            document.getElementById("weight").value = familyObj.weight;
+            document.getElementById("height").value = familyObj.height;
+            document.getElementById("gender").value = familyObj.gender;
+            document.getElementById("calories").value = calculateCalories(familyObj.age, familyObj.weight, familyObj.height, familyObj.gender);//document.getElementById("calories").value;
+
+            document.getElementById("submit").innerHTML = "Update";
+
+        }
+
+        function calculateCalories(age, weight, height, gender) {
+            if (gender == "M" || gender == "m") {
+                return Math.round(66.4730 + (13.7516 * weight) + (5.0033 * height) - (6.7550 * age));
+            } else if (gender == "F" || gender == "f") {
+                return Math.round(655.0955 + (9.5634 * weight) + (1.8496 * height) - (4.6756 * age));
+            } else {
+                return "Error";
+            }
+
+        }
+
+    </script>
 </head>
 
-<body class="theme-indigo">
+<body class="theme-indigo", themed: onload="init()">
     <!-- Page Loader -->
     <div class="page-loader-wrapper">
         <div class="loader">
@@ -108,9 +210,50 @@
             <div class="row clearfix">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="card">
-                        <div class="body">
-                            <p>I am amazing</p>
+                        <body onload="init()">
+                        <div class="container-fluid">
+                            <table id="regtable" class="table table-hover" style="color:#f5f5f6">
+                                <thead>
+                                    <tr>
+                                        <th>Family Members</th>
+                                        <th class="wrap">Age</th>
+                                        <th class="wrap">Weight</th>
+                                        <th class="wrap">Height</th>
+                                        <th class>Gender</th>
+                                        <th class="wrap">Caloric Intake</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tablerows">
+
+                                </tbody>
+                                <tbody>
+                                    <td>
+                                        <input type="text" placeholder="Name" id="name" class="form-control">
+                                    </td>
+                                    <td>
+                                        <input type="text" placeholder="Age" id="age" class="form-control">
+                                    </td>
+                                    <td>
+                                        <input type="text" placeholder="Weight(kg)" id="weight" class="form-control">
+                                    </td>
+                                    <td>
+                                        <input type="text" placeholder="Height(cm)" id="height" class="form-control">
+                                    </td>
+                                    <td>
+                                        <input type="text" placeholder="Gender(M/F)" id="gender" class="form-control">
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td>
+                                        <button id="submit" onclick="onRegisterPressed()" style="color:#000000">Register</button>
+                                        <button id="clear" onclick="onClearPressed()" style="color:#000000">Clear</button>
+                                    </td>
+                                </tbody>
+                            </table>
                         </div>
+
+                        <footer class="headerbar bottom"></footer>
                     </div>
                 </div>
             <!-- #END# Summary -->
