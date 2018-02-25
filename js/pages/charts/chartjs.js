@@ -221,30 +221,6 @@ function showChart(graph, clickme) {
 
 $(document).ready(function() {
     
-    overviewChart = $('#overviewChart');
-    meatChart = $('#meatChart');
-    vegeChart = $('#vegeChart');
-    fruitChart = $('#fruitChart');
-    dairyChart = $('#dairyChart');
-    confecChart = $('#confecChart');
-    othersChart = $('#othersChart');
-    sidebarOverview = $('sidebarOverview');
-    sidebarMeat = $('sidebarMeat');
-    sidebarVegetables = $('sidebarVegetables');    
-    sidebarFruits = $('sidebarFruits');
-    sidebarDairy = $('sidebarDairy');  
-    sidebarConfectionery = $('sidebarConfectionery');  
-    sidebarOthers = $('sidebarOthers');
-
-/*
-    showChart(overviewChart, sidebarOverview);
-    showChart(meatChart, sidebarMeat);
-    showChart(vegeChart, sidebarVegetables);
-    showChart(fruitChart, sidebarFruits);
-    showChart(dairyChart, sidebarDairy);
-    showChart(confecChart, sidebarConfectionery);
-    showChart(othersChart, sidebarOthers);
-*/
 
     $('ul.tabs li').click(function(){
         var tab_id = $(this).attr('data-tab');
