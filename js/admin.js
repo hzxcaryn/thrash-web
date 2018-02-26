@@ -488,6 +488,22 @@ var generalChart = new Chart(ctx, {
 });
 */
 
+function getTotalCalories() {
+            if (localStorage.familyRecord) {
+                familyArray = JSON.parse(localStorage.familyRecord);
+                var totalCalories = 0;
+                for (var i = 0; i < familyArray.length; i++) {
+                    if (familyArray[i].calories != "error") {
+                        totalCalories += familyArray[i].calories;
+                    }
+                }
+                console.log(totalCalories);
+            }
+
+            return totalCalories;
+        }
+
+
 //==========================================================================================================================
 
 $(function () {
